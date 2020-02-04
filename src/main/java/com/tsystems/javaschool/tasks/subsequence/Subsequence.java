@@ -15,6 +15,29 @@ public class Subsequence {
     @SuppressWarnings("rawtypes")
     public boolean find(List x, List y) {
         // TODO: Implement the logic here
-        return false;
+
+        try {
+            if (x.size() > y.size()) {
+                return false;
+            }
+        } catch (NullPointerException e) {
+            throw new IllegalArgumentException();
+            //e.printStackTrace();
+        }
+        int counterY = 0;
+        boolean found;
+        for (int counterX = 0; counterX < x.size(); counterX++) {
+            found = false;
+            while (!found) {
+                if (x.get(counterX).equals(y.get(counterY))) {
+                    found = true;
+                }
+                counterY++;
+                if (!found && counterY == y.size()) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

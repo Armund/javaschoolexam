@@ -45,7 +45,6 @@ public class Calculator {
 
             Double resultDouble = Numbers.pop();
             if (resultDouble.isInfinite() || !Numbers.isEmpty()) {
-                Numbers.clear();
                 return null;
             }
             resultString = resultDouble.toString();
@@ -72,11 +71,11 @@ public class Calculator {
         Stack<Character> stack = new Stack<>();
         String[] tokens = statement.split(" ");
 
-        for (int i = 0; i < tokens.length; i++) {
-            if (isNumber(tokens[i])) {
-                result += tokens[i] + " ";
+        for (String token : tokens) {
+            if (isNumber(token)) {
+                result += token + " ";
             } else {
-                Character ch = tokens[i].charAt(0);
+                Character ch = token.charAt(0);
                 if (isOperationSign(ch)) {
                     boolean pushed = false;
                     while (!pushed) {
@@ -146,30 +145,3 @@ public class Calculator {
         return result.charAt(result.length()-1) == ' ' ? result.substring(0, result.length()-1) : result;
     }
 }
-
-/*
-
-    public static void main(String[] args) {
-        CalculatorTest calculatorTest = new CalculatorTest();
-        calculatorTest.evaluate();
-        calculatorTest.evaluate1();
-        calculatorTest.evaluate2();
-        calculatorTest.evaluate3();
-        calculatorTest.evaluate4();
-        calculatorTest.evaluate5();
-        calculatorTest.evaluate6();
-        calculatorTest.evaluate7();
-        calculatorTest.evaluate8();
-        calculatorTest.evaluate9();
-        calculatorTest.evaluate10();
-        calculatorTest.evaluate11();
-        calculatorTest.evaluate12();
-        calculatorTest.evaluate13();
-        calculatorTest.evaluate14();
-        calculatorTest.evaluate15();
-        calculatorTest.evaluate16();
-        calculatorTest.evaluate17();
-        calculatorTest.evaluate18();
-        calculatorTest.evaluate19();
-    }
- */
