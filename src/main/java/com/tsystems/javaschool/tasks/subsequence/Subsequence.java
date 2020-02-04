@@ -22,7 +22,6 @@ public class Subsequence {
             }
         } catch (NullPointerException e) {
             throw new IllegalArgumentException();
-            //e.printStackTrace();
         }
         int counterY = 0;
         boolean found;

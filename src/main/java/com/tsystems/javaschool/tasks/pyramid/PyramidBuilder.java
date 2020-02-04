@@ -16,7 +16,7 @@ public class PyramidBuilder {
         int rows = 0;
         long buf;
         for (int i = 1; S < inputNumbers.size(); i++) {
-            buf = i;//(long) i;
+            buf = i;
             S = (buf*buf+buf)/2;
             rows = i;
         }
