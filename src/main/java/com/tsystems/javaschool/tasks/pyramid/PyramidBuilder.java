@@ -28,7 +28,6 @@ public class PyramidBuilder {
             inputNumbers = MergeSort.sortList(inputNumbers);
         } catch (Exception e) {
             throw new CannotBuildPyramidException();
-            //e.printStackTrace();
         }
 
         int columns = rows*2-1;
